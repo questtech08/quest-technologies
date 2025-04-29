@@ -1,0 +1,932 @@
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+main, .page-content, .courses-section, .sister-section, .contact-form-section {
+  margin-top: 50px;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.quote-section img,
+.blog-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Full-width course category background */
+.course-category {
+    width: 100vw;
+}
+
+/* Home Page */
+
+/* Navigation Bar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 30px;
+  background-color: white;
+  box-shadow: 0 0px 10px #003366;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+/* Logo and Company Name Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img:first-child {
+  height: 70px;
+}
+
+.logo img:last-child {
+  height: 40px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #003366;
+}
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+} 
+
+.nav-links.show {
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 70px; /* slightly below navbar */
+  right: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  display: flex;
+  z-index: 999;
+}
+
+.nav-links li a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 18px; /* Reduced font size for balance */
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #003366;
+    color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+}
+.nav-links {
+  flex-direction: column;
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  .nav-links.show {
+      display: flex;
+  }
+
+  .nav-links li {
+      width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: #003366;
+    text-align: left;
+  }
+  .logo {
+    gap: 5px;
+    align-items: center;
+  }
+
+  .logo img:first-child {
+      height: 50px;
+      margin-left: -20px;
+  }
+
+  .logo img:last-child {
+      height: 30px;        /* Reduced "Quest Technologies" text size */
+  }
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    margin-right: -10px;
+  }
+  .quote-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/home/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px 60px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.quote-text {
+  font-size: 24px;
+  color: white;
+  font-family: 'Gabarito', cursive;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.blog-container {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.blog-image{
+  margin-right: 0 auto;
+}
+
+.blog-content{
+  align-content: center;
+}
+
+.footer-content {
+  flex-direction: column;
+  text-align: center;
+}
+
+.blog-section{
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo{
+  margin-left: 70px;
+}
+
+.blog-text {
+  text-align: center;
+}
+
+.courses-section {
+padding: 50px 0;
+}
+
+}
+
+/* Quote Section Styling */
+.quote-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../assets/home/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 0;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Quote Text Styling */
+.quote-text {
+        font-family: 'Bilbo Swash Caps', cursive;
+        font-size: 5rem;
+        font-style: italic;
+        color: white;
+        text-align: center;
+        margin: 20px auto;
+}
+/* Mission and Vision Section */
+.vision-mission-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #e0f7fa;
+}
+
+.vision-mission-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #3c6e71;
+    text-transform: uppercase;
+}
+
+.vision-mission-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 350px;
+    perspective: 1000px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.flip-card-back {
+    background-color: #003366;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-front img, .flip-card-back img {
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.flip-card-back p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+/* About Us Section (Updated) */
+.about-us {
+    background-color: #e9f5ff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Core Values Section (Creative Design) */
+.core-values-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.core-values-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #3c6e71;
+}
+
+.core-values-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.core-value-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.core-value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.core-value-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.core-value-card h3 {
+    margin: 10px 0;
+    color: #3c6e71;
+    font-size:1.5rem;
+}
+
+.core-value-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: white;
+    color: #003366;
+    padding: 40px 0 20px;
+    text-align: center;
+    box-shadow: 0 0 10px #003366;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.footer-logo img{
+    height: 120px;
+    margin-bottom: 20px;
+    margin-left: -60px;
+}
+
+.footer-name img{
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin: 8px 0;
+}
+
+.footer-links a {
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: purple;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Social Media Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.footer-social a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2);
+}
+
+/* Courses Page */
+
+/* Courses Section */
+.courses-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.courses-section h1{
+    color:#3c6e71;
+    font-weight: bolder;
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.courses-section h2 {
+    color: #003366;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+
+/* Courses Grid Layout */
+.course-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.course-grid h3{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    color: #003366;
+}
+
+/* Course Card Styling */
+.course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 250px;
+    height: 350px;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    object-fit:contain;
+}
+
+.course-card h4 {
+    margin-top: 10px;
+    color: #003366;
+    font-size: 1.4rem;
+}
+
+/* Background Colors for Course Sections */
+.bg-blue {
+    background-color: #e0f7fa; /* Light Blue */
+    padding: 10px;
+}
+
+.bg-white {
+    background-color: #ffffff; /* White */
+    padding: 40px 0;
+}
+
+.bg-blue-int {
+    background-color: #e0f7fa;
+    padding: 40px 0;
+    margin-bottom: -50px;
+}
+
+/* Course Category Heading Styling */
+.course-category h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.course-category h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #003366;
+}
+.courses-section p{
+    font-size: 1.2rem;
+}
+
+
+/* Milestone*/
+.blog-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 20px;
+  background-color: #f8f9fc;
+  margin-top: 60px; /* Push below navbar */
+  gap: 30px;
+  overflow: hidden;
+}
+  
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 1;
+}
+
+.blog-text {
+ flex: 1;
+  min-width: 300px;
+  font-family: 'Gabarito', sans-serif;
+  font-size: 1.1rem;
+  color: #003366;
+  text-align: justify;
+}
+
+.blog-text p {
+  line-height: 1.7;
+}
+
+  .blog-text h3{
+    color: #003366;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: 'Dynalight', cursive;
+    font-size: 2.5rem;
+    text-align:center;
+    font-weight:bolder;
+  }
+
+  .blog-content {
+    line-height: 1.8;
+    font-size: 1.2rem;
+  }
+  
+  .founder-name {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #003366;
+    font-family: 'Dynalight', cursive;
+    margin-left: 400px;
+  }
+  
+  .blog-image {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .blog-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .milestone-achievements {
+    background-color: #e0f7fa;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .achievement-title {
+    font-family: 'Bona Nova SC', serif;
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 50px;
+  }
+  
+  .achievement-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .achievement-item {
+    font-size: 1.2rem;
+    font-family: 'Gabarito', sans-serif;
+    color: #003366;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .achievement-item .count {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #003366;
+  }
+  .carousel-section {
+    margin: 4rem 0;
+    padding: 1rem;
+  }
+  
+  .carousel-heading {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+    margin-top: -30px;
+  }
+
+  .carousel-heading h2{
+    font-family:'Bona Nova SC',serif;
+    color: #003366;
+    font-size: 2rem;
+  }
+  
+  .carousel-track-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    min-width: 200%; /* ensures double width for smooth loop */
+    animation: scroll-left 40s linear infinite;
+  }
+  
+  .carousel-track-wrapper.left-to-right .carousel-track {
+    animation: scroll-left 40s linear infinite;
+  }
+  
+  .carousel-track-wrapper.right-to-left .carousel-track {
+    animation: scroll-right 40s linear infinite;
+  }
+  
+  .carousel-track-wrapper.paused .carousel-track {
+    animation-play-state: paused;
+  }  
+  
+  .carousel-track-wrapper.paused .carousel-track {
+    animation-play-state: paused;
+  }
+  
+  .carousel-track img {
+    height: 300px;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-shrink: 0; 
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Right to left (scrolling rightward) — for later */
+@keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .carousel-track-wrapper.right-to-left .carousel-track {
+    animation: scroll-right 40s linear infinite;
+  }
+
+  .mou-gallery-section {
+    padding: 3rem 2rem;
+    background-color: #e0f7fa;
+    text-align: center;
+  }
+  
+  .mou-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  
+  .mou-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .mou-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:contain;
+  }
+  
+  .contact-form-section {
+    padding: 3rem 2rem;
+    background-color: #e0f7fa;
+    text-align: center;
+  }
+  
+  .google-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .sister-collab{
+    background-color: #e9f5ff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .sister-collab h2{
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .sister-collab p{
+    font-size: 1.2rem;
+    color: #333;
+    margin: 20px auto;
+    /* max-width: 800px; */
+    line-height: 1.8;
+    text-align:center;
+  }
+
+  .collab-logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+  }
+  
+  .flip-card-sc {
+    background: transparent;
+    width: 600px;
+    height: 280px;
+    perspective: 1000px;
+  }
+  
+  .flip-inner-sc {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  
+  .flip-card-sc:hover .flip-inner-sc {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front-sc, .flip-back-sc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .flip-front-sc {
+    background-color: #ffffff;
+  }
+  
+  .flip-front-sc img {
+    max-width: 100%;
+    max-height: 80%;
+    object-fit: contain;
+  }
+  
+  .flip-back-sc {
+    background-color: #0077aa;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
